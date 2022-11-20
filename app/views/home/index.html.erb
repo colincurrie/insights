@@ -1,0 +1,8 @@
+<h1>Instagram Data Insights</h1>
+
+<% if @auth_url %>
+    <a href="<%= @auth_url %>">Log In</a> to Instagram to continue.
+<% elsif @user_info %>
+    <p><%= @user_info %></p>
+<% end %>
+
