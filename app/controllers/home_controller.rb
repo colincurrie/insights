@@ -33,6 +33,10 @@ class HomeController < ApplicationController
 
     end
 
+    def data_deletion
+
+    end
+
     def auth_url
         "https://api.instagram.com/oauth/authorize?client_id=#{@app_id}&redirect_uri=#{@auth_callback}&scope=user_profile,user_media,instagram_graph_user_profile,instagram_graph_user_media&response_type=code"
     end
