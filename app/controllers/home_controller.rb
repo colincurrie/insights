@@ -9,11 +9,11 @@ class HomeController < ApplicationController
 
     def index
 
-        logger.debug 'getting user info: ' + user_info_url
+        logger.debug "getting user info: #{user_info_url}"
         response = JSON.parse( HTTParty.get( user_info_url ).body )
 
         if response['error']
-            logger.error 'index response failed: ' + response
+            logger.error "index response failed: #{response}"
             case response['error']['code']
                 when 190 then redirect_to auth_url, allow_other_host: true
             end
@@ -24,7 +24,7 @@ class HomeController < ApplicationController
 
     # TODO: move to it's own controller
     def auth_callback
-        
+
     end
 
     def auth_url
